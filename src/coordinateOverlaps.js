@@ -28,8 +28,8 @@
  *     overlaps (see the Overlaps typedef).
  */
 function run(coordinates) {
-	var overlaps = [];
-	for (var i = 0; i < coordinates.length; i += 1) {
+  var overlaps = [];
+  for (var i = 0; i < coordinates.length; i += 1) {
     var coordinate = coordinates[i];
     var x = coordinate[0];
     var y = coordinate[1];
@@ -42,12 +42,12 @@ function run(coordinates) {
       overlaps[x][y] += 1;
     }
     coordinate[2] = overlaps[x][y];
-	}
+  }
 
-	return {
-		coordinates: coordinates,
+  return {
+    coordinates: coordinates,
     overlaps: overlaps
-	};
+  };
 }
 
 module.exports = {

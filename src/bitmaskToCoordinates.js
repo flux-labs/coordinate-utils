@@ -11,18 +11,18 @@
  * @return {Array.<Array.<Number>>} Array of [x,y,z] unit coordinates.
  */
 function run(matrixMask) {
-	var coordinates = [];
-	for (var row = 0; row < matrixMask.length; row += 1) {
-		for (var col = 0; col < matrixMask[row].length; col += 1) {
+  var coordinates = [];
+  for (var row = 0; row < matrixMask.length; row += 1) {
+    for (var col = 0; col < matrixMask[row].length; col += 1) {
       if (matrixMask[row][col] === 1) {
         coordinates.push([col, row, 0]);
       }
-		}
-	}
+    }
+  }
 
-	return {
-		coordinates: coordinates
-	};
+  return {
+    coordinates: coordinates
+  };
 }
 
 module.exports = {
