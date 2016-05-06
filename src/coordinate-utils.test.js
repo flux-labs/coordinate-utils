@@ -52,6 +52,9 @@ test('coordinatesToBitmask runs correctly.', function(t) {
        [0,0,0,0,0],
        [0,0,0,0,1]]);
 
+  test([[-2,0,0]], [[1,0,0]]);
+  test([[0,-2,0]], [[1], [0], [0]]);
+
   t.end();
 });
 
