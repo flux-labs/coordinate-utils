@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Turns a 2-dimensional bitmask (1's and 0's) and turns it into an array of
+ * Takes a 2-dimensional bitmask (1's and 0's) and turns it into an array of
  * [x,y,z] unit coordinates, a coordinate for every position where the value is
  * 1.
  *

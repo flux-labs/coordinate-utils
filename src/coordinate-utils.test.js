@@ -10,6 +10,7 @@
 import test from 'tape';
 
 import bitmaskToCoordinates from './bitmaskToCoordinates.js';
+import coordinatesToBitmask from './coordinatesToBitmask.js';
 import coordinateOverlaps from './coordinateOverlaps.js';
 import coordinatesToPoints from './coordinatesToPoints.js';
 
@@ -30,6 +31,26 @@ test('bitmaskToCoordinates runs correctly.', function(t) {
        [0,0,0,0,0],
        [0,0,0,0,1]],
       [[4,0,0], [2,2,0], [4,4,0]]);
+
+  t.end();
+});
+
+test('coordinatesToBitmask runs correctly.', function(t) {
+  function test(inputCoords, expectedOutputMatrixMask) {
+    var blockReturn = coordinatesToBitmask.run(inputCoords);
+    t.deepEqual(blockReturn.matrixMask, expectedOutputMatrixMask,
+        'For ' + inputCoords +
+        ', the coordinatesToBitmask block returns correct matrix mask');
+  }
+  test([], [[0]]);
+  test([[0,0,0]], [[1]]);
+  test([[1,0,0]], [[0,1]]);
+  test([[4,0,0], [2,2,0], [4,4,0]],
+      [[0,0,0,0,1],
+       [0,0,0,0,0],
+       [0,0,1,0,0],
+       [0,0,0,0,0],
+       [0,0,0,0,1]]);
 
   t.end();
 });
